@@ -1,0 +1,3 @@
+[
+    { "caption": "Open TortoiseHg Workbench…", "command": "tortoise_hg", "args": { "dirs": [] } }
+]

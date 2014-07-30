@@ -15,11 +15,15 @@ def thg_binary():
 
 
 class TortoiseHgCommand(sublime_plugin.WindowCommand):
-    def run(self, **kwargs):
+    def run(self, dirs=None, **kwargs):
         cmd_kwargs = {
             "cmd": thg_binary(),
-            "output_panel_force": False,
+            "suppress_output_panel": True,
             "quiet": True,
+            "working_dir": dirs[0] if dirs else "",
         }
         cmd_kwargs.update(kwargs)
         self.window.run_command("exec_ex", cmd_kwargs)
+
+    def is_visible(self, dirs=None):
+        return dirs is None or len(dirs) > 0
