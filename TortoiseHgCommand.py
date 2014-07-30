@@ -16,8 +16,11 @@ def thg_binary():
 
 class TortoiseHgCommand(sublime_plugin.WindowCommand):
     def run(self, dirs=None, **kwargs):
+        settings = sublime.load_settings("Preferences.sublime-settings")
+        thg_cmd = settings.get("tortoisehg_command", thg_binary())
+
         cmd_kwargs = {
-            "cmd": thg_binary(),
+            "cmd": thg_cmd,
             "suppress_output_panel": True,
             "quiet": True,
             "working_dir": dirs[0] if dirs else "",
