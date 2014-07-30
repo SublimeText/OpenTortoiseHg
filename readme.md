@@ -3,7 +3,7 @@ Open TortoiseHg Workbench
 This package adds a command to the command palette and the side bar context
 menu to open the TortoiseHg workbench in the directory of the current file or
 the right-clicked directory, respectively. On Windows, the TortoiseHg path is
-read from the registry; on other systems, `thg` is run from the system PATH.
+read from the registry; on other systems, `thg` is run from the system `PATH`.
 Alternatively, you can set `tortoisehg_command` in the user preferences file.
 
 ## About
